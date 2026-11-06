@@ -7,8 +7,9 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Contact | Connor Tebbs</title>
-  <meta name="description" content="Contact Connor Tebbs, mechanical engineering student at UT Dallas. Available for engineering opportunities in Dallas, Austin, and other locations.">
+  <meta name="description" content="Contact Connor Tebbs, mechanical engineering student at the University of Texas at Dallas.">
 
+  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
@@ -26,6 +27,115 @@
 
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Contact Page Styling -->
+  <style>
+
+    .contact-layout {
+      padding-top: 90px;
+      padding-bottom: 110px;
+    }
+
+    .contact-heading {
+      font-size: 38px;
+      font-weight: 700;
+      margin-bottom: 35px;
+      color: #ffffff;
+    }
+
+    .contact-form-simple label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 9px;
+      color: #ffffff;
+    }
+
+    .contact-form-simple input,
+    .contact-form-simple textarea {
+      display: block;
+      width: 100%;
+      padding: 14px 16px;
+      margin-bottom: 25px;
+      border: 1px solid #42515a;
+      border-radius: 5px;
+      background-color: #172832;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 15px;
+    }
+
+    .contact-form-simple input:focus,
+    .contact-form-simple textarea:focus {
+      outline: none;
+      border-color: #149ddd;
+    }
+
+    .contact-form-simple textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .contact-send-btn {
+      display: inline-block;
+      padding: 13px 34px;
+      border: none;
+      border-radius: 30px;
+      background-color: #149ddd;
+      color: #ffffff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact-send-btn:hover {
+      background-color: #087bb2;
+    }
+
+    .contact-info-block {
+      margin-bottom: 35px;
+    }
+
+    .contact-info-block i {
+      color: #149ddd;
+      font-size: 29px;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .contact-info-block h3 {
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .contact-info-block p {
+      margin-bottom: 5px;
+      color: #b7c5ce;
+      line-height: 1.7;
+    }
+
+    .contact-info-block a {
+      color: #b7c5ce;
+      text-decoration: none;
+    }
+
+    .contact-info-block a:hover {
+      color: #149ddd;
+    }
+
+    @media (max-width: 991px) {
+      .contact-layout {
+        padding-top: 55px;
+        padding-bottom: 65px;
+      }
+
+      .contact-info-column {
+        margin-top: 45px;
+      }
+    }
+
+  </style>
+
   <!--
   Template: FolioOne
   Author: BootstrapMade.com
@@ -35,21 +145,26 @@
 
 <body class="contact-page">
 
+  <!-- Header -->
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
+
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
       <nav id="navmenu" class="navmenu">
+
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="resume.html">Resume</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="resume.html">Resume</a></li>
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
+
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
       </nav>
 
     </div>
+
   </header>
 
   <main class="main">
@@ -57,112 +172,124 @@
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>
-          I'm open to engineering internships, research opportunities,
-          and professional connections. Feel free to reach out.
-        </p>
-      </div>
+      <div class="container contact-layout">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-5">
 
-        <div class="row justify-content-center">
+          <!-- Left Column: Contact Form -->
+          <div class="col-lg-7" data-aos="fade-up">
 
-          <div class="col-lg-9">
+            <h2 class="contact-heading">Let's Talk</h2>
 
-            <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+            <form id="contactForm" class="contact-form-simple">
 
-              <h3>Get In Touch</h3>
+              <label for="contactName">Your Name</label>
+              <input
+                type="text"
+                id="contactName"
+                name="name"
+                placeholder="Your name"
+                required
+              >
 
-              <p>
-                For engineering opportunities, project discussions,
-                or professional inquiries, you can contact me using
-                the information below.
+              <label for="contactEmail">Email</label>
+              <input
+                type="email"
+                id="contactEmail"
+                name="email"
+                placeholder="Your email address"
+                required
+              >
+
+              <label for="contactMessage">Message</label>
+              <textarea
+                id="contactMessage"
+                name="message"
+                placeholder="Write your message here..."
+                required
+              ></textarea>
+
+              <button type="submit" class="contact-send-btn">
+                Compose Email
+                <i class="bi bi-arrow-right ms-2"></i>
+              </button>
+
+              <p style="font-size: 13px; color: #8fa1ad; margin-top: 15px;">
+                Opens your email application with the message filled in.
+                Review and send it there.
               </p>
 
-              <!-- Email -->
-              <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+            </form>
 
-                <div class="icon-box">
-                  <i class="bi bi-envelope"></i>
-                </div>
+          </div>
 
-                <div class="content">
-                  <h4>Email</h4>
-                  <p>
-                    <a href="mailto:connor.tebbs10@gmail.com">
-                      connor.tebbs10@gmail.com
-                    </a>
-                  </p>
-                </div>
+          <!-- Right Column: Contact Information -->
+          <div class="col-lg-5 contact-info-column"
+               data-aos="fade-up"
+               data-aos-delay="150">
 
-              </div>
+            <h2 class="contact-heading">Contact Info</h2>
 
-              <!-- Phone -->
-              <div class="info-item" data-aos="fade-up" data-aos-delay="350">
+            <!-- LinkedIn -->
+            <div class="contact-info-block">
 
-                <div class="icon-box">
-                  <i class="bi bi-telephone"></i>
-                </div>
+              <i class="bi bi-linkedin"></i>
 
-                <div class="content">
-                  <h4>Phone</h4>
-                  <p>
-                    <a href="tel:+15127386903">
-                      (512) 738-6903
-                    </a>
-                  </p>
-                </div>
+              <h3>LinkedIn</h3>
 
-              </div>
+              <p>
+                <a href="https://www.linkedin.com/in/connor-tebbs-366144385/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  Connor Tebbs
+                </a>
+              </p>
 
-              <!-- LinkedIn -->
-              <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+            </div>
 
-                <div class="icon-box">
-                  <i class="bi bi-linkedin"></i>
-                </div>
+            <!-- Email -->
+            <div class="contact-info-block">
 
-                <div class="content">
-                  <h4>LinkedIn</h4>
-                  <p>
-                    <a href="https://www.linkedin.com/in/connor-tebbs-366144385/"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                      Connor Tebbs
-                    </a>
-                  </p>
-                </div>
+              <i class="bi bi-envelope"></i>
 
-              </div>
+              <h3>Email</h3>
 
-              <!-- Location -->
-              <div class="info-item" data-aos="fade-up" data-aos-delay="450">
+              <p>
+                <a href="mailto:connor.tebbs10@gmail.com">
+                  connor.tebbs10@gmail.com
+                </a>
+              </p>
 
-                <div class="icon-box">
-                  <i class="bi bi-geo-alt"></i>
-                </div>
+            </div>
 
-                <div class="content">
+            <!-- Phone -->
+            <div class="contact-info-block">
 
-                  <h4>Location &amp; Availability</h4>
+              <i class="bi bi-telephone"></i>
 
-                  <p>Dallas &amp; Austin, Texas</p>
+              <h3>Phone</h3>
 
-                  <p>
-                    Based in Dallas during the academic year,
-                    with availability in Dallas and Austin
-                    during the summer.
-                  </p>
+              <p>
+                <a href="tel:+15127386903">
+                  (512) 738-6903
+                </a>
+              </p>
 
-                  <p>
-                    Open to relocation for engineering opportunities.
-                  </p>
+            </div>
 
-                </div>
+            <!-- Location -->
+            <div class="contact-info-block">
 
-              </div>
+              <i class="bi bi-geo-alt"></i>
+
+              <h3>Location</h3>
+
+              <p>Dallas &amp; Austin, Texas</p>
+
+              <p>
+                Dallas during the academic year;
+                available in both cities during summer.
+              </p>
 
             </div>
 
@@ -177,38 +304,47 @@
 
   </main>
 
+  <!-- Footer -->
   <footer id="footer" class="footer">
 
     <div class="container">
 
       <div class="copyright text-center">
+
         <p>
           © <span>2026</span>
           <strong class="px-1 sitename">Connor Tebbs</strong>
           <span>All Rights Reserved</span>
         </p>
+
       </div>
 
+      <!-- Required Template Attribution -->
       <div class="credits">
+
         Designed by
         <a href="https://bootstrapmade.com/">BootstrapMade</a>
         |
         <a href="https://bootstrapmade.com/tools/">DevTools</a>
+
       </div>
 
     </div>
 
   </footer>
 
+  <!-- Scroll Top -->
   <a href="#"
      id="scroll-top"
      class="scroll-top d-flex align-items-center justify-content-center">
+
     <i class="bi bi-arrow-up-short"></i>
+
   </a>
 
   <div id="preloader"></div>
 
-  <!-- Vendor JS -->
+  <!-- Vendor JavaScript -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
@@ -218,6 +354,37 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Contact Form JavaScript -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const name = document.getElementById("contactName").value.trim();
+      const email = document.getElementById("contactEmail").value.trim();
+      const message = document.getElementById("contactMessage").value.trim();
+
+      if (!name || !email || !message) {
+        return;
+      }
+
+      const subject = encodeURIComponent("Portfolio Contact - " + name);
+
+      const body = encodeURIComponent(
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n\n" +
+        "Message:\n" + message
+      );
+
+      window.location.href =
+        "mailto:connor.tebbs10@gmail.com?subject=" +
+        subject +
+        "&body=" +
+        body;
+
+    });
+  </script>
 
   <script src="assets/js/main.js"></script>
 
