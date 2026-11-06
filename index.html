@@ -1,14 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Connor Tebbs | Mechanical Engineering Portfolio</title>
-  <meta name="description" content="Connor Tebbs is a mechanical engineering student at the University of Texas at Dallas with experience in robotics, mechanical design, mechatronics, and experimental research.">
-  <meta name="keywords" content="Connor Tebbs, Mechanical Engineering, UT Dallas, Robotics, Mechatronics, Engineering Portfolio, CAD">
+
+  <meta name="description"
+        content="Mechanical engineering portfolio of Connor Tebbs, a UT Dallas student with experience in robotics, mechanical design, and experimental research.">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -17,6 +17,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS -->
@@ -30,134 +31,282 @@
   <link href="assets/css/main.css" rel="stylesheet">
 
   <!--
-  Template Name: FolioOne
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
+    Template: FolioOne
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
   -->
+
+  <style>
+
+    /* Compact homepage sections */
+
+    .home-section {
+      padding: 50px 0;
+    }
+
+    .home-section h2 {
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .home-section p {
+      line-height: 1.8;
+    }
+
+    /* Team photograph */
+
+    .team-photo {
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+    }
+
+    /* Academic details */
+
+    .academic-details {
+      margin: 22px 0;
+      line-height: 1.8;
+    }
+
+    .academic-details p {
+      margin-bottom: 0;
+    }
+
+    /* Contact information */
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 25px;
+      margin-top: 20px;
+    }
+
+    .contact-links a {
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile adjustments */
+
+    @media (max-width: 768px) {
+
+      .home-section {
+        padding: 35px 0;
+      }
+
+      .contact-links {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 <body class="index-page">
 
-  <!-- Header -->
-  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+  <!-- HEADER -->
+  <header id="header"
+          class="header d-flex align-items-center light-background sticky-top">
+
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
+      <!-- NAVIGATION -->
+
       <nav id="navmenu" class="navmenu">
+
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
+
+          <li>
+            <a href="index.html" class="active">Home</a>
+          </li>
+
+          <li>
+            <a href="portfolio.html">Portfolio</a>
+          </li>
+
+          <li>
+            <a href="resume.html">Résumé</a>
+          </li>
+
         </ul>
+
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
       </nav>
 
+      <!-- LINKEDIN -->
+
       <div class="header-social-links">
-        <a href="https://github.com/connortebbs" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <i class="bi bi-github"></i>
+
+        <a href="https://www.linkedin.com/in/connor-tebbs-366144385/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="LinkedIn">
+
+          <i class="bi bi-linkedin"></i>
+
         </a>
+
       </div>
 
     </div>
+
   </header>
 
   <main class="main">
 
-    <!-- Hero Section -->
+    <!-- ===================================== -->
+    <!-- HOME INTRODUCTION                     -->
+    <!-- ===================================== -->
+
     <section id="hero" class="hero section">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container" data-aos="fade-up">
 
         <div class="row gy-4 align-items-center">
 
-          <!-- Introduction -->
+          <!-- LEFT: INTRODUCTION -->
+
           <div class="col-lg-6 order-2 order-lg-1">
+
             <div class="hero-content">
 
-              <h1 data-aos="fade-up" data-aos-delay="200">
-                Hello, I'm <span class="highlight">Connor Tebbs</span>
+              <h1 data-aos="fade-up">
+
+                Hello, I'm
+                <span class="highlight">Connor Tebbs</span>
+
               </h1>
 
-              <h2 data-aos="fade-up" data-aos-delay="300">
-                <span class="typed"
-                  data-typed-items="Mechanical Engineering Student, Robotics & Mechatronics, Mechanical Design">
-                </span>
+              <!-- Fixed professional heading -->
+
+              <h2 data-aos="fade-up" data-aos-delay="100">
+
+                Mechanical Engineering Student
+                <span class="highlight">| Robotics &amp; Mechatronics</span>
+
               </h2>
 
-              <p data-aos="fade-up" data-aos-delay="400">
-                I'm a mechanical engineering student at the
-                University of Texas at Dallas, expecting to graduate
-                in Fall 2028. My experience includes robotic systems,
-                mechanical design, and experimental research, with
-                projects involving artificial muscle actuators,
-                assistive devices, and space robotics.
+              <!-- Brief introduction -->
+
+              <p data-aos="fade-up" data-aos-delay="200">
+
+                I'm a mechanical engineering student at
+                the University of Texas at Dallas with
+                experience in robotics, mechanical design,
+                and experimental research.
+
+                My projects include space robotics,
+                artificial muscle actuators, and
+                assistive devices.
+
               </p>
 
-              <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
+              <!-- Academic qualifications -->
 
-                <a href="portfolio.html" class="btn btn-primary">
-                  View My Work
-                </a>
+              <div class="academic-details"
+                   data-aos="fade-up"
+                   data-aos-delay="300">
 
-                <a href="contact.html" class="btn btn-outline">
-                  Get In Touch
-                </a>
+                <p>
+
+                  <strong>B.S. Mechanical Engineering</strong>
+
+                  <br>
+
+                  The University of Texas at Dallas
+
+                  <br>
+
+                  Expected Graduation: Fall 2028
+
+                  <br>
+
+                  GPA: 3.742 / 4.0
+
+                </p>
 
               </div>
 
-              <div class="social-links" data-aos="fade-up" data-aos-delay="600">
+              <!-- Main navigation buttons -->
 
-                <a href="https://github.com/connortebbs"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   aria-label="GitHub">
-                  <i class="bi bi-github"></i>
+              <div class="hero-actions"
+                   data-aos="fade-up"
+                   data-aos-delay="400">
+
+                <a href="portfolio.html"
+                   class="btn btn-primary">
+
+                  View My Work
+
+                </a>
+
+                <a href="resume.html"
+                   class="btn btn-outline">
+
+                  View Résumé
+
                 </a>
 
               </div>
 
             </div>
+
           </div>
 
-          <!-- Profile Image -->
+          <!-- RIGHT: ROVER CAD -->
+
           <div class="col-lg-6 order-1 order-lg-2">
-            <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
+
+            <div class="hero-image"
+                 data-aos="zoom-in"
+                 data-aos-delay="200">
 
               <div class="image-wrapper">
 
-                <!-- Temporary template image -->
-                <img src="assets/img/rphoto.png"
-     alt="UT Dallas Comet Aerobotics NASA Lunabotics rover CAD assembly"
-     class="img-fluid">
+                <img
+                  src="assets/img/rphoto.png"
+                  alt="CAD assembly of the UT Dallas Comet Aerobotics NASA Lunabotics team rover"
+                  class="img-fluid">
+
+                <!-- Floating engineering labels -->
 
                 <div class="floating-elements">
 
-                  <div class="floating-card design"
-                       data-aos="fade-left"
-                       data-aos-delay="700">
+                  <div class="floating-card design">
+
                     <i class="bi bi-gear"></i>
                     <span>Mechanical Design</span>
+
                   </div>
 
-                  <div class="floating-card code"
-                       data-aos="fade-right"
-                       data-aos-delay="800">
+                  <div class="floating-card code">
+
                     <i class="bi bi-cpu"></i>
                     <span>Mechatronics</span>
+
                   </div>
 
-                  <div class="floating-card creativity"
-                       data-aos="fade-up"
-                       data-aos-delay="900">
-                    <i class="bi bi-robot"></i>
+                  <div class="floating-card creativity">
+
+                    <i class="bi bi-lightbulb"></i>
                     <span>Robotics</span>
+
                   </div>
 
                 </div>
 
               </div>
+
             </div>
+
           </div>
 
         </div>
@@ -165,66 +314,201 @@
       </div>
 
     </section>
-    <!-- End Hero Section -->
+
+    <!-- ===================================== -->
+    <!-- ENGINEERING IN PRACTICE               -->
+    <!-- ===================================== -->
+
+    <section id="experience"
+             class="home-section section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4 align-items-center">
+
+          <!-- Engineering team photograph -->
+
+          <div class="col-lg-6">
+
+            <img
+              src="assets/img/signal-2025-11-20-202556_004.jpg"
+              alt="Connor Tebbs collaborating with engineering teammates around a wooden rover prototype"
+              class="team-photo">
+
+          </div>
+
+          <!-- Short supporting description -->
+
+          <div class="col-lg-6">
+
+            <h2>Engineering in Practice</h2>
+
+            <p>
+
+              Through undergraduate research and
+              student engineering teams at UT Dallas,
+              I've worked on the design, fabrication,
+              and testing of mechanical systems.
+
+              These experiences have involved
+              developing CAD models, evaluating
+              mechanical designs, building prototypes,
+              and using experimental results to
+              guide improvements.
+
+            </p>
+
+            <p>
+
+              The Portfolio page documents these
+              projects and my individual contributions.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- CONTACT INFORMATION                   -->
+    <!-- ===================================== -->
+
+    <section id="contact"
+             class="home-section section">
+
+      <div class="container" data-aos="fade-up">
+
+        <h2>Contact</h2>
+
+        <p>
+
+          Based in Dallas during the academic year.
+          Available in Dallas and Austin during the summer.
+
+        </p>
+
+        <div class="contact-links">
+
+          <!-- EMAIL -->
+
+          <a href="mailto:connor.tebbs10@gmail.com">
+
+            <i class="bi bi-envelope"></i>
+
+            connor.tebbs10@gmail.com
+
+          </a>
+
+          <!-- PHONE -->
+
+          <a href="tel:+15127386903">
+
+            <i class="bi bi-telephone"></i>
+
+            (512) 738-6903
+
+          </a>
+
+          <!-- LINKEDIN -->
+
+          <a href="https://www.linkedin.com/in/connor-tebbs-366144385/"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            <i class="bi bi-linkedin"></i>
+
+            LinkedIn
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
 
   </main>
 
-  <!-- Footer -->
+  <!-- ===================================== -->
+  <!-- FOOTER                                -->
+  <!-- ===================================== -->
+
   <footer id="footer" class="footer">
 
     <div class="container">
 
       <div class="copyright text-center">
+
         <p>
-          © <span>2026</span>
-          <strong class="px-1 sitename">Connor Tebbs</strong>
-          <span>All Rights Reserved</span>
+
+          © 2026
+
+          <strong class="px-1 sitename">
+            Connor Tebbs
+          </strong>
+
         </p>
+
       </div>
 
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://github.com/connortebbs"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="GitHub">
-          <i class="bi bi-github"></i>
-        </a>
-      </div>
+      <!-- Template attribution -->
 
-      <!-- Required template attribution -->
       <div class="credits">
+
         Designed by
-        <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        |
-        <a href="https://bootstrapmade.com/tools/">DevTools</a>
+
+        <a href="https://bootstrapmade.com/">
+          BootstrapMade
+        </a>
+
       </div>
 
     </div>
+
   </footer>
 
-  <!-- Scroll Top -->
+  <!-- SCROLL TO TOP -->
+
   <a href="#"
      id="scroll-top"
      class="scroll-top d-flex align-items-center justify-content-center">
+
     <i class="bi bi-arrow-up-short"></i>
+
   </a>
 
   <div id="preloader"></div>
 
-  <!-- Vendor JS -->
+  <!-- VENDOR JAVASCRIPT -->
+
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
   <script src="assets/vendor/php-email-form/validate.js"></script>
+
   <script src="assets/vendor/aos/aos.js"></script>
+
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
+
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 
-  <!-- Main JS -->
+  <!-- MAIN JAVASCRIPT -->
+
   <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>
