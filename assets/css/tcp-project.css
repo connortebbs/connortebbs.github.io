@@ -1,0 +1,29 @@
+
+.tcp-page { --tcp-accent: #168c90; --tcp-line: color-mix(in srgb, currentColor 17%, transparent); }
+.tcp-wrap { max-width: 1000px; margin: 0 auto; padding: 42px 22px 64px; }
+.tcp-kicker { font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 650; opacity: .75; }
+.tcp-hero h1 { font-size: clamp(2rem, 4.4vw, 3.15rem); line-height: 1.13; margin: 12px 0; }
+.tcp-meta { display:flex; flex-wrap:wrap; gap: 8px 24px; font-size: .92rem; margin: 18px 0 22px; opacity:.84; }
+.tcp-lead { font-size: 1.13rem; line-height: 1.65; max-width: 850px; }
+.tcp-section { border-top: 1px solid var(--tcp-line); padding-top: 28px; margin-top: 34px; }
+.tcp-section h2 { font-size: 1.55rem; margin-bottom: 14px; }
+.tcp-section h3 { font-size: 1.1rem; margin: 20px 0 8px; }
+.tcp-section p, .tcp-hero p { line-height: 1.65; }
+.tcp-fig { margin: 0; min-width:0; }
+.tcp-fig img { width:100%; display:block; border-radius:8px; background:#eceef0; height:auto; }
+.tcp-fig figcaption { font-size:.86rem; opacity:.86; line-height:1.45; padding:9px 0 0; }
+.tcp-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin:20px 0; align-items:start; }
+.tcp-grid .tcp-fig img { height:clamp(220px, 36vw, 420px); object-fit:contain; }
+.tcp-grid.tcp-setup .tcp-fig img { height:auto; }
+.tcp-wide { margin:20px 0; }
+.tcp-wide img { max-height:450px; object-fit:contain; }
+.tcp-equation { font-family: Georgia, serif; font-size:1.13rem; line-height:1.6; border-left:3px solid var(--tcp-accent); padding:10px 15px; margin:14px 0; overflow-wrap:anywhere; }
+.tcp-caption { font-size:.86rem; opacity:.85; }
+.tcp-table { width:100%; border-collapse:collapse; font-size:.93rem; margin:16px 0; }
+.tcp-table td,.tcp-table th { border-bottom:1px solid var(--tcp-line); padding:9px 12px; text-align:left; vertical-align:top; }
+.tcp-table th { font-weight:650; }
+.tcp-scroll { overflow-x:auto; }
+.tcp-status { padding:14px 0; border-top:1px solid var(--tcp-line); }
+.tcp-page a { text-underline-offset:3px; }
+.tcp-ref { font-size:.88rem; line-height:1.6; overflow-wrap:anywhere; }
+@media(max-width:650px){.tcp-grid{grid-template-columns:1fr}.tcp-wrap{padding:28px 16px 42px}.tcp-table td,.tcp-table th{padding:8px 6px}}
