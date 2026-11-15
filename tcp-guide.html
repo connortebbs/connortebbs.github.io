@@ -88,6 +88,11 @@
 .tcp-page .tcp-fea-placeholder{min-height:145px}
 .tcp-page .tcp-wrap .tcp-small{font-size:.8rem;line-height:1.45}
 .tcp-page .tcp-wrap .tcp-key{color:var(--tcp-highlight);font-weight:inherit}
+.tcp-page .tcp-fea-stack{display:grid;gap:12px}
+.tcp-page .tcp-fea-stack .tcp-fea-placeholder{min-height:105px;padding:18px 12px}
+.tcp-page .tcp-table th:first-child,.tcp-page .tcp-table td:first-child{width:40%}
+.tcp-page .tcp-table th:not(:first-child),.tcp-page .tcp-table td:not(:first-child){white-space:nowrap}
+@media(max-width:480px){.tcp-page .tcp-table th:not(:first-child){white-space:normal}}
 </style></head>
 <body class="portfolio-page tcp-page">
 <header class="header d-flex align-items-center light-background sticky-top" id="header">
@@ -116,7 +121,7 @@
 </section>
 <section aria-label="Vertical fabrication design and calculations" class="tcp-band tcp-vertical">
 <figure class="tcp-vertical-fig"><a class="glightbox" data-gallery="tcp" href="assets/img/portfolio/tcp/vertical-cad.webp"><img alt="CAD model of vertical motor mount, guide, and deadweight attachment" src="assets/img/portfolio/tcp/vertical-cad.webp"/></a><figcaption>Vertical guide with a removable deadweight attachment and interlocking rail sections.</figcaption></figure>
-<div><h2>Designing for rotational loads and friction</h2><p>I referenced <a href="https://www.electrokit.com/upload/product/41002/41002972/ghm16.pdf" rel="noopener" target="_blank">DC gearmotor specifications</a> and the <a href="https://store.bblcdn.com/s7/default/b189de92249a4b9ebed28b8ea1f080f0/Bambu_PLA_Basic_Technical_Data_Sheet.pdf" rel="noopener" target="_blank">PLA material data sheet</a> to establish a basis for sizing the guide. I used force and moment balances to estimate friction and bending from resisting rotation, with assumed transmitted torque, friction and effective printed stiffness for the preliminary calculations.</p>
+<div><h2>Vertical fabrication: Rotation and friction</h2><p>I referenced <a href="https://www.electrokit.com/upload/product/41002/41002972/ghm16.pdf" rel="noopener" target="_blank">DC gearmotor specifications</a> and the <a href="https://store.bblcdn.com/s7/default/b189de92249a4b9ebed28b8ea1f080f0/Bambu_PLA_Basic_Technical_Data_Sheet.pdf" rel="noopener" target="_blank">PLA material data sheet</a> to establish a basis for sizing the guide. I used force and moment balances to estimate friction and bending from resisting rotation, with assumed transmitted torque, friction and effective printed stiffness for the preliminary calculations.</p>
 <div aria-label="Key sizing equations" class="tcp-mathsheet">
 <div class="tcp-mathline"><math display="inline"><mi>N</mi><mo>≈</mo><mfrac><msub><mi>M</mi><mtext>TCP</mtext></msub><mi>d</mi></mfrac><mo>,</mo><mspace width="0.6em"></mspace><msub><mi>F</mi><mtext>drag</mtext></msub><mo>≈</mo><mn>2</mn><mi>μ</mi><mi>N</mi></math><span>Contact forces and drag</span></div>
 <div class="tcp-mathline"><math display="inline"><mi>Δ</mi><mi>m</mi><mo>=</mo><msub><mi>m</mi><mi>g</mi></msub><mo>+</mo><mfrac><msub><mi>F</mi><mtext>drag</mtext></msub><mi>g</mi></mfrac></math><span>Deadweight compensation (upward travel)</span></div>
@@ -125,30 +130,44 @@
 <p>One preliminary load case predicted an added drag of <span class="tcp-key">0.10 N (equivalent to 10.2 g of deadweight)</span>, excluding the moving guide's own mass. This helped me determine how much weight would need to be removed to maintain fabrication tension. The bending calculations guided my choice of rail geometry and clearance to reduce the risk of snagging.</p><p>The initial printed guide slid smoothly in fit testing. I retained the sliding surfaces and reduced the outer faces to clear the rail fasteners under side loading. The low predicted rail deflection supported <span class="tcp-key">15% infill</span> to reduce material and printing costs.</p></div>
 </section>
 <section aria-label="Horizontal characterization design" class="tcp-band tcp-horizontal">
-<div><h2>Adapting the rail for horizontal characterization</h2><p>Building on my mentor's <a href="https://doi.org/10.1115/SMASIS2023-111182" rel="noopener" target="_blank">previous work on active cooling of TCP actuators</a>, I designed a second carriage that uses the same rail. A string connects the TCP inside the cooling tube to a removable rectangular post. A fixed laser displacement sensor measures the change in distance from the tube to the circular plate as the TCP contracts under applied voltage and expands during cooling. An opposing preload maintains tension throughout the proposed test.</p>
+<div><h2>Adapting the rail for horizontal characterization</h2><p>Building on my mentor's <a href="https://doi.org/10.1115/SMASIS2023-111182" rel="noopener" target="_blank">previous work on active cooling of TCP actuators</a>, I designed a second carriage that uses the same rail. A string connects the TCP inside the cooling tube to a removable rectangular post. A fixed laser displacement sensor measures the change in distance from the tube to the circular plate as the TCP expands under applied voltage and contracts during cooling. An opposing preload keeps the muscle in tension.</p>
 <p>With the rail horizontal, the carriage's weight contributes to sliding friction rather than directly adding to the axial TCP load. I also checked the bending moment from the elevated string attachment and its effect on laser target alignment.</p>
 <div aria-label="Horizontal post sizing equations" class="tcp-mathsheet">
 <div class="tcp-mathline"><math display="inline"><mi>M</mi><mo>=</mo><mi>T</mi><mi>h</mi><mo>,</mo><mspace width="0.5em"></mspace><msub><mi>R</mi><mtext>lower</mtext></msub><mo>=</mo><mfrac><mi>M</mi><mi>L</mi></mfrac></math><span>Bending moment and socket reaction</span></div>
 <div class="tcp-mathline"><math display="inline"><msub><mi>δ</mi><mtext>post</mtext></msub><mo>≈</mo><mfrac><mrow><mi>T</mi><msup><mi>h</mi><mn>3</mn></msup></mrow><mrow><mn>3</mn><mi>E</mi><mi>I</mi></mrow></mfrac></math><span>Post bending at the load point</span></div>
-<p class="tcp-mathnote">T: applied tensile load in the single-load model; h: height above the socket; L: supported engagement length. The deflection estimate assumes a fixed socket and a tip-loaded post.</p></div>
+<p class="tcp-mathnote">T: tensile load; h: height above the socket; L: supported engagement length. The post is modeled as a cantilever.</p></div>
 <p>I selected a rectangular post to prevent twisting and increased its supported length to reduce binding. For the same load and attachment height, <span class="tcp-key">doubling the supported length halves the moment-induced lower reaction</span>. Post deflection was also checked to limit displacement measurement error.</p></div>
 <figure><a class="glightbox" data-gallery="tcp" href="assets/img/portfolio/tcp/horizontal-cad.webp"><img alt="Proposed horizontal TCP characterization with cooling tube, string, and laser target" src="assets/img/portfolio/tcp/horizontal-cad.webp"/></a><figcaption>Horizontal characterization CAD: shared rail, removable post, cooling tube and laser target.</figcaption></figure>
 </section>
-<section class="tcp-verification"><h2>Structural verification: Hand calculations vs. FEA</h2><p>I 3D printed and tested the guide for sliding fit. The comparison below focuses on the displacement that could cause snagging or measurement error, and the strength and alignment of the motor mount.</p>
-<div class="tcp-fea-layout"><div><h3 class="tcp-check-title">Displacement comparison</h3><div class="tcp-scroll"><table class="tcp-table"><thead><tr><th scope="col">Load case</th><th scope="col">Hand calc.</th><th scope="col">FEA</th><th scope="col">Difference</th></tr></thead><tbody><tr><td>Rail lateral load</td><td>0.00188 mm</td><td>___ mm</td><td>___%</td></tr><tr><td>Post bending</td><td>0.01755 mm</td><td>___ mm</td><td>___%</td></tr></tbody></table></div><p class="tcp-small">Matched benchmarks: 0.167 N rail center load; 1 N post tip load; equivalent modulus of 1 GPa.</p></div><div class="tcp-fea-placeholder">SolidWorks displacement plot<small>Rail and horizontal post displacement</small></div></div>
-<div class="tcp-mount-check"><h3 class="tcp-check-title">Motor mount alignment and strength</h3>
-<p>I sized the mount for motor weight and fabrication tension, checking angular deflection to maintain vertical alignment with the rail and targeting a <span class="tcp-key">minimum factor of safety of 3</span>. The low predicted tilt supported exploring a lighter print rather than solid infill. I selected 40% infill and six wall loops to reinforce the mount.</p>
+<section class="tcp-verification">
+<h2>Structural verification</h2>
+<p>I 3D printed and tested the guide for sliding fit. I used the following structural checks to assess snagging, displacement measurement accuracy and motor alignment.</p>
+<div class="tcp-fea-layout"><div>
+<h3 class="tcp-check-title">Guide displacement: Hand calculations vs. FEA</h3>
+<div class="tcp-scroll"><table class="tcp-table"><thead><tr><th scope="col">Component / load case</th><th scope="col">Hand calc.</th><th scope="col">FEA</th><th scope="col">Difference</th></tr></thead><tbody>
+<tr><td>Vertical fabrication rail — lateral bending</td><td>0.00188 mm</td><td>___ mm</td><td>___%</td></tr>
+<tr><td>Horizontal characterization post — bending</td><td>0.01755 mm</td><td>___ mm</td><td>___%</td></tr>
+</tbody></table></div>
+<p class="tcp-small">Difference: absolute percentage deviation from the hand calculation.</p>
+</div><div class="tcp-fea-stack">
+<div class="tcp-fea-placeholder">Vertical fabrication rail<small>SolidWorks lateral displacement plot</small></div>
+<div class="tcp-fea-placeholder">Horizontal characterization post<small>SolidWorks displacement plot</small></div>
+</div></div>
+<div class="tcp-mount-check"><h3 class="tcp-check-title">Vertical fabrication: Motor mount alignment and strength</h3>
+<p>I checked the mount's angular deflection to keep the TCP aligned with the vertical rail. The low predicted tilt motivated a lighter print, with 40% infill and six wall loops for reinforcement. I set a <span class="tcp-key">minimum factor of safety of 3</span> for the mount.</p>
 <div class="tcp-fea-layout"><div><div aria-label="Motor mount bending and alignment equations" class="tcp-mathsheet">
 <div class="tcp-mathline"><math display="inline"><msub><mi>M</mi><mi>b</mi></msub><mo>=</mo><mi>P</mi><mi>e</mi><mo>,</mo><mspace width="0.5em"></mspace><mi>θ</mi><mo>≈</mo><mfrac><mrow><mi>P</mi><msup><mi>e</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>E</mi><mi>I</mi></mrow></mfrac></math><span>Load moment and mount rotation</span></div>
-<div class="tcp-mathline"><math display="inline"><mi>σ</mi><mo>=</mo><mfrac><mrow><mi>M</mi><mi>c</mi></mrow><mi>I</mi></mfrac><mo>,</mo><mspace width="0.6em"></mspace><mi>n</mi><mo>=</mo><mfrac><msub><mi>σ</mi><mtext>allow</mtext></msub><mi>σ</mi></mfrac></math><span>Bending stress and safety margin</span></div>
-<p class="tcp-mathnote">P: combined motor weight and TCP tension; e: effective cantilever length; θ: rotation in radians; n: nominal bending safety margin.</p></div></div>
-<div class="tcp-fea-placeholder">SolidWorks motor mount study<small>Angular displacement and factor of safety</small></div></div>
+
+<p class="tcp-mathnote">P: motor weight and TCP tension; e: effective cantilever length; θ: mount rotation (radians).</p></div>
 <div class="tcp-scroll"><table class="tcp-table"><thead><tr><th scope="col">Structural check</th><th scope="col">Hand calc.</th><th scope="col">FEA</th><th scope="col">Difference / target</th></tr></thead><tbody>
-<tr><td>Motor-axis tilt (bending)</td><td>0.00274°</td><td>___°</td><td>___%</td></tr>
-<tr><td>Nominal bending safety margin</td><td>≈ 209</td><td>___</td><td>___%</td></tr>
-<tr><td>Full mount FOS</td><td>—</td><td>___</td><td>≥ 3</td></tr>
-</tbody></table></div><p class="tcp-small">Simplified constant-section cantilever benchmark: 2.55 N load, 49 mm effective span, 1 GPa equivalent modulus and 10 MPa assumed allowable stress. The nominal margin excludes motor torque, fasteners and local failure; the full mount requires a separate assembly check.</p></div>
-<p class="tcp-small">Analytical and FEA values are compared under matching loads and equivalent material properties; neither directly models printed infill or interlayer adhesion.</p></section>
+<tr><td>Motor-axis tilt</td><td>0.00274°</td><td>___°</td><td>___%</td></tr>
+<tr><td>Motor mount FOS</td><td>Not calculated</td><td>___</td><td>≥ 3</td></tr>
+</tbody></table></div></div><div class="tcp-fea-stack">
+<div class="tcp-fea-placeholder">Motor mount angular deflection<small>SolidWorks alignment study</small></div>
+<div class="tcp-fea-placeholder">Motor mount factor of safety<small>SolidWorks strength study</small></div>
+</div></div></div>
+<p class="tcp-small">Hand calculations and FEA are simplified models of the printed parts. Displacement comparisons require matching loads, supports and material properties.</p>
+</section>
 </article></main>
 <footer class="footer" id="footer">
 <div class="container">
